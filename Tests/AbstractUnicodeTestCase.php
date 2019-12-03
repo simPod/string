@@ -510,6 +510,19 @@ abstract class AbstractUnicodeTestCase extends AbstractAsciiTestCase
         );
     }
 
+    public static function provideUnderscore(): array
+    {
+        return array_merge(
+            parent::provideUnderscore(),
+            [
+                ['symfony_5_ist_äußerst_cool', 'symfony5IstÄußerstCool'],
+                ['8äußerst', '8äußerst'],
+                ['8_äußerst', '8Äußerst'],
+                ['i_reversed_aussert_tsreßuä_8', 'iReversedAussertTsreßuä8'],
+            ]
+        );
+    }
+
     public static function provideEqualsTo()
     {
         return array_merge(

@@ -639,6 +639,11 @@ abstract class AbstractString implements \JsonSerializable
     /**
      * @return static
      */
+    abstract public function underscore(): self;
+
+    /**
+     * @return static
+     */
     abstract public function upper(): self;
 
     abstract public function width(bool $ignoreAnsiDecoration = true): int;
